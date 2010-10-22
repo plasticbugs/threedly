@@ -14,6 +14,8 @@ Reviews::Application.routes.draw do
     resources :quotes
   end
   
+  root :to => "home#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
