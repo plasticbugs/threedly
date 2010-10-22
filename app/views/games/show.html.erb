@@ -1,0 +1,16 @@
+<%= image_tag(@game.imageurl, :class => 'itempic') %>
+<div class="info">
+  <ul>
+	<li class='title'><%= @game.title %></li>
+	<li class='description'><%= @game.description %></li>
+	<li><%= @game.rating %></li>
+	<li><%= link_to "Buy on Amazon", @game.amazonurl %></li>
+	</ul>
+</div>
+
+<div class='quotes'><%= render :partial => "quotes/quote", :collection => @game.quotes %></div>
+
+	<%= link_to "Edit this item", edit_game_path(@game) %> 
+	<%= link_to "Add a pull quote to this item", game_quotes_path(@game) %>
+ 
+	<%= link_to "Add another item", new_game_path %>

@@ -1,0 +1,34 @@
+<h1>Edit <%= @game.title %></h1>
+
+<% form_for(@game) do |f| -%>
+
+<p><%= f.label :title %><br />
+<%= f.text_field :title %></p>
+
+<p>	<%= f.label :description %><br />
+	<%= f.text_area :description %></p>
+	
+<p>    <%= f.label 'Official Link' %><br />
+	<%= f.text_field :officialurl %></p>
+	
+<p>    <%= f.label 'Image' %><br />
+	<%= f.text_field :imageurl %></p>
+	
+<p>    <%= f.label 'Amazon Link' %><br />
+	<%= f.text_field :amazonurl %></p>
+	
+	<p>    <%= f.label :console %><br />
+  	<%= f.text_field :console %></p>
+	
+	<p><%= f.label 'Publisher' %><br />
+		<%= f.text_field :publisher %></p>
+	
+	<p><%= f.label 'Developer' %><br />
+		<%= f.text_field :developer %></p>
+		
+	<p><%= f.label 'Release Date' %><br />
+		<%= date_select("game", "releasedate") %></p>
+	
+    <%= f.submit "Update" %>
+
+<% end -%>

@@ -1,0 +1,41 @@
+<h1>Quotes</h1>
+<div id="quotes">
+<% @quotes.each do |quote| %>
+  <div class="quote">
+	<%= quote.author %><br />
+    <%= quote.review %>
+  </div>
+<% end %>
+</div>
+
+
+<h2>New Comment</h2>
+
+<% form_for [@quotable, Quote.new] do |f| %>
+<p>
+  <%= f.label :author %><br />
+  <%= f.text_field :author %>
+</p>
+<p>
+   <%= f.label 'Image link' %><br />
+   <%= f.text_field :image %>
+ </p>
+  <p>
+    <%= f.label :review %><br />
+    <%= f.text_area :review %>
+  </p>
+  <p>
+    <%= f.label :site %><br />
+    <%= f.text_field :site %>
+  </p>
+  <p>
+    <%= f.label :sitelink %><br />
+    <%= f.text_field :sitelink %>
+  </p>
+  <p>
+    <%= f.label :rating %><br />
+    <%= f.text_field :rating %>
+  </p>
+  
+  <p><%= f.submit "Submit" %></p>
+<% end %>

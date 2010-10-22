@@ -1,4 +1,19 @@
 Reviews::Application.routes.draw do
+  
+  resources :games
+
+  resources :games do
+    resources :quotes
+  end
+  
+  resources :movies do
+    resources :quotes
+  end
+  
+  resources :products do
+    resources :quotes
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,10 @@
+<% @products.each do |product| %>
+<ul class="item"><li class="title"><%= link_to product.title, product %></li>
+	<li class="modelno"><%= product.modelnumber %></li>
+	<li class="officiallink"><%= product.officialurl %></li>
+	<li class="rating"><%= product.rating %></li>
+	<li class="category"><%= product.category %></li>
+	<li class="amazon"><%= link_to 'Buy this on Amazon', product.amazonurl %></li>
+	<li><%= link_to "Edit", edit_product_path(product) %></li></ul>
+<% end %>
+	<%= link_to "Add another product", new_product_path %>

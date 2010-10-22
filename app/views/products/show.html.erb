@@ -1,0 +1,16 @@
+<%= image_tag(@product.imageurl, :class => 'itempic') %>
+<div class='info'>
+  <ul>
+	<li class="title"><%= @product.title %></li>
+	<li class="modelno"><%= @product.modelnumber %></li>
+	<li class="rating"><%= @product.rating %></li>
+	<li class="description"><%= @product.description %></li>
+	<li><%= link_to "Buy on Amazon", @product.amazonurl %></li>
+	</ul>
+</div>	
+	
+	<div class="quotes"><%= render :partial => "quotes/quote", :collection => @product.quotes %></div>
+
+		<%= link_to "Edit this item", edit_product_path(@product) %> | 
+	<%= link_to "Add another item", new_product_path %>
+<%= link_to "Add a pull quote to this item", product_quotes_path(@product) %>

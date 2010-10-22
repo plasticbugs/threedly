@@ -1,0 +1,28 @@
+<h1>Products > edit</h1>
+
+<% form_for(@product) do |f| -%>
+
+<p><%= f.label :title %><br />
+<%= f.text_field :title %></p>
+
+<p>	<%= f.label :description %><br />
+	<%= f.text_area :description %></p>
+	
+	<p>	<%= f.label 'Model Number' %><br />
+		<%= f.text_field :modelnumber %></p>
+	
+<p>    <%= f.label 'Official Link' %><br />
+	<%= f.text_field :officialurl %></p>
+	
+<p>    <%= f.label 'Image' %><br />
+	<%= f.text_field :imageurl %></p>
+	
+<p>    <%= f.label 'Amazon Link' %><br />
+	<%= f.text_field :amazonurl %></p>
+	
+	<p><%= f.label :category %><br />
+		<%= f.text_field :category %></p>
+	
+    <%= f.submit "Update" %>
+
+<% end -%>

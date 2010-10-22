@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Reviews</title>
+  <title><%= @pagetitle %></title>
   <%= stylesheet_link_tag :all %>
+<%= stylesheet_link_tag "style" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+	<div id="container">
+<div id="header">
+  <%= image_tag "/images/logo.png", :title => "Threedly Logo", :class => "logo" %>
+</div>
 
+<div id="navbar">
+  <ul><li><%= link_to "GAMES", games_path %></li><li><%= link_to "MOVIES", movies_path %></li><li><%= link_to "PRODUCTS", products_path %></li></ul>
+</div>
+<div id="content">
+	<%= flash[:notice] %>
 <%= yield %>
+</div>
 
+</div>
 </body>
 </html>

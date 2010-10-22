@@ -1,0 +1,28 @@
+<h1>Movies > New</h1>
+
+<% form_for(@movie) do |f| -%>
+
+<p><%= f.label :title %><br />
+<%= f.text_field :title %></p>
+
+<p>	<%= f.label :description %><br />
+	<%= f.text_area :description %></p>
+	
+<p>    <%= f.label 'Official Link' %><br />
+	<%= f.text_field :officialurl %></p>
+	
+<p>    <%= f.label 'Image' %><br />
+	<%= f.text_field :imageurl %></p>
+	
+<p>    <%= f.label 'Amazon Link' %><br />
+	<%= f.text_field :amazonurl %></p>
+	
+	<p><%= f.label 'Studio' %><br />
+		<%= f.text_field :studio %></p>
+	
+	<p><%= f.label 'Format' %><br />
+		<%= f.text_field :format %></p>
+	
+    <%= f.submit "Create" %>
+
+<% end -%>
