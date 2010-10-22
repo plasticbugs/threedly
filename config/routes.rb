@@ -1,5 +1,7 @@
 Reviews::Application.routes.draw do
   
+  devise_for :users
+
   resources :games
 
   resources :games do
@@ -14,7 +16,7 @@ Reviews::Application.routes.draw do
     resources :quotes
   end
   
-  root :to => "home#index"
+  root :to => "games#index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
