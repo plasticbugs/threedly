@@ -1,6 +1,6 @@
 <h1>Games > New</h1>
 
-<% form_for(@game) do |f| -%>
+<% form_for @game, :url => game_path, :html => { :multipart => true} do |f| -%>
 
 <p><%= f.label :title %><br />
 <%= f.text_field :title %></p>
@@ -13,6 +13,10 @@
 	
 <p>    <%= f.label 'Image Path' %><br />
 	<%= f.text_field :imageurl %></p>
+	
+	
+	<p><%= f.label 'Image Upload' %><br />
+	<%= form.file_field :image %></p>
 	
 <p>    <%= f.label 'Amazon Link' %><br />
 	<%= f.text_field :amazonurl %></p>
