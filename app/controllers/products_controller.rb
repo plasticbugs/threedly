@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
     @products = Product.find(:all)

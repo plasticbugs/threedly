@@ -6,4 +6,6 @@
 	<li class="amazon"><%= link_to "Buy this on Amazon", game.amazonurl %></li>
 	<li class=""<%= link_to "Edit", edit_game_path(game) %></li></ul>
 <% end %>
+<% if user_signed_in? %>
 <%= link_to "Add another game", new_game_path %>
+<% end %>

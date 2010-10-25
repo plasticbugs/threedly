@@ -7,4 +7,6 @@
 	<li class="amazon"><%= link_to 'Buy this on Amazon', product.amazonurl %></li>
 	<li><%= link_to "Edit", edit_product_path(product) %></li></ul>
 <% end %>
+<% if user_signed_in? %>
 	<%= link_to "Add another product", new_product_path %>
+	<% end %>
