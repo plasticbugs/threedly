@@ -4,7 +4,7 @@
 	<li class="officiallink"><%= game.officialurl %></li>
 	<li class="rating"><%= game.rating %></li>
 	<li class="amazon"><%= link_to "Buy this on Amazon", game.amazonurl %></li>
-	<li class=""<%= link_to "Edit", edit_game_path(game) %></li></ul>
+	<% if user_signed_in? %><li class=""<%= link_to "Edit", edit_game_path(game) %></li><% end %></ul>
 <% end %>
 <% if user_signed_in? %>
 <%= link_to "Add another game", new_game_path %>

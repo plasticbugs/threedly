@@ -72,9 +72,6 @@ body {
 	background-image: url('/images/header_bg.png');
 	background-repeat: repeat-y;
 	color: #000;
-	font-family: "Palatino", serif;
-	font-size: 1.8em;
-	font-variant: small-caps;
 }
 
 #header .logo {
@@ -213,9 +210,24 @@ li.title a:active {
 	color: #c6392c;
 }
 
+#login {
+	float: right;
+	font-size: 12px;
+	font-family: Helvetica, Arial, 'sans-serif';
+	margin: 10px 15px 0 0;
+}
 
 #container img{
 }
+
+.notice {
+	background: #FFF6BF;
+	border-top: 2px solid #FFD324;
+	border-bottom: 2px solid #FFD324;
+	text-align: center;
+	margin: -10px 0 10px auto;
+	padding: 5px 0px 5px 0px;
+	}
 
 ul.item {
 	font-size: .8em;
