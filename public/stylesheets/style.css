@@ -220,13 +220,20 @@ li.title a:active {
 #container img{
 }
 
+.alert {
+	background: #ffa8ab;
+	border: 2px solid #a9262a;
+	margin: -10px 0 10px 0px;
+	padding: 5px 0px 5px 10px;
+	width: 500px;
+	}
+
 .notice {
 	background: #FFF6BF;
-	border-top: 2px solid #FFD324;
-	border-bottom: 2px solid #FFD324;
-	text-align: center;
-	margin: -10px 0 10px auto;
-	padding: 5px 0px 5px 0px;
+	border: 2px solid #FFD324;
+	margin: -10px 0 10px 0px;
+	padding: 5px 0px 5px 10px;
+	width: 500px;
 	}
 
 ul.item {
