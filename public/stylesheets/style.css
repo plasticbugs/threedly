@@ -239,3 +239,22 @@ li.title a:active {
 ul.item {
 	font-size: .8em;
 }
+
+.quote {
+	background: white;
+	width: 250px;
+	float: left;
+	margin: 5px;
+}
+
+.newcomment {
+	clear: left;
+}
+
+.adminpanel {
+	clear: left;
+}
+
+.quote .author {
+	font-size: 20px;
+}

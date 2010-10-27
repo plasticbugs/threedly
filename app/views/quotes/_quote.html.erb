@@ -1,8 +1,10 @@
-  <div class="quote">
-    <%= quote.author %>
-    <%= quote.image %>
-    <%= quote.review %>  
-    <%= quote.site %>
-    <%= quote.sitelink %>
-    <%= quote.rating %>
-  </div>
+<div class="quote">
+  <div class="author"><%= quote.author %></div>
+  <div class="image"><%= quote.imageurl %></div>
+  <div class="review"><%= quote.review %> </div> 
+  <div class="site"><%= link_to quote.sitename, quote.siteurl %></div>
+  <div class="rating"><%= quote.rating %></div>
+  <% if user_signed_in? %>
+  <div class-"adminpanel"><%= link_to "Edit this quote", polymorphic_url([@game, quote], :action => 'edit') %></div>
+  <% end %>
+</div>

@@ -10,7 +10,8 @@
 
 <div class='quotes'><%= render :partial => "quotes/quote", :collection => @game.quotes %></div>
 
-	<%= link_to "Edit this item", edit_game_path(@game) %> 
-	<%= link_to "Add a pull quote to this item", game_quotes_path(@game) %>
+<% if user_signed_in? %><ul class="adminpanel">	<li><%= link_to "Edit this item", edit_game_path(@game) %></li> 
+	<li><%= link_to "Add a pull quote to this item", game_quotes_path(@game) %></li>
  
-	<%= link_to "Add another item", new_game_path %>
+	<li><%= link_to "Add another item", new_game_path %></li>
+</ul><% end %>

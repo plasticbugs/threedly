@@ -1,17 +1,5 @@
-<h1>Quotes</h1>
-<div id="quotes">
-<% @quotes.each do |quote| %>
-  <div class="quote">
-	<%= quote.author %><br />
-    <%= quote.review %>
-  </div>
-<% end %>
-</div>
+<% form_for ([@quotable, @quote]) do |f| %>
 
-
-<h2 class="newcomment">New Comment</h2>
-
-<% form_for [@quotable, Quote.new] do |f| %>
 <p>
   <%= f.label :author %><br />
   <%= f.text_field :author %>
@@ -23,20 +11,21 @@
   <p>
     <%= f.label :review %><br />
     <%= f.text_area :review %>
-  </p>
-  <p>
+  </p>  
+  <p>   
     <%= f.label :sitename %><br />
     <%= f.text_field :sitename %>
-  </p>
-  <p>
+  </p>  
+  <p>   
     <%= f.label :site %><br />
     <%= f.text_field :siteurl %>
-  </p>
-
-  <p>
+  </p>  
+        
+  <p>   
     <%= f.label :rating %><br />
     <%= f.text_field :rating %>
   </p>
-  
-  <p><%= f.submit "Submit" %></p>
+
+  <p><%= f.submit "Update" %></p>
+ 
 <% end %>

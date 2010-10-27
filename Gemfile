@@ -11,6 +11,8 @@ gem 'devise', '1.1.2'
 
 gem 'paperclip'
 
+gem 'twitter'
+
 group :development do
   gem 'rspec-rails', '2.0.0'
   gem 'devise', '1.1.2'
