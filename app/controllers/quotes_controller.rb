@@ -1,14 +1,12 @@
 class QuotesController < ApplicationController
-  
   before_filter :authenticate_user!, :except => [:index]
+  before_filter :find_quotable
   
   def index
-    @quotable = find_quotable
     @quotes = @quotable.quotes
   end
-
+  
   def create
-    @quotable = find_quotable
     @quote = @quotable.quotes.build(params[:quote])
     if @quote.save
       flash[:notice] = "Successfully created quote."
@@ -18,14 +16,20 @@ class QuotesController < ApplicationController
     end
   end
   
+  def show
+    @quote = Quote.find(params[:id])
+  end
+  
+  def new
+    @quote = Quote.new
+  end
+  
   def edit
-    @quotable = find_quotable
-    @quote = @quotable.quotes.find(params[:id])
+    @quote = Quote.find(params[:id])
   end
   
   def update
-    @quotable = find_quotable
-    @quote = @quotable.quotes.find(params[:id])
+    @quote = Quote.find(params[:id])
         
     if @quote.update_attributes(params[:quote])
       flash[:notice] = 'Quote was successfully updated!'
@@ -35,15 +39,16 @@ class QuotesController < ApplicationController
     end
   end
   
-  
-
 private
   def find_quotable
     params.each do |name, value|
       if name =~ /(.+)_id$/
-        return $1.classify.constantize.find(value)
+        @quotable = $1.classify.constantize.find(value)
+        return @quotable
       end
     end
     nil
   end
+
+
 end

@@ -4,7 +4,8 @@
   <div class="review"><%= quote.review %> </div> 
   <div class="site"><%= link_to quote.sitename, quote.siteurl %></div>
   <div class="rating"><%= quote.rating %></div>
+  <%= @quotable%>
   <% if user_signed_in? %>
-  <div class-"adminpanel"><%= link_to "Edit this quote", polymorphic_url([@game, quote], :action => 'edit') %></div>
+  <div class-"adminpanel"><%= link_to "Edit this quote", polymorphic_url([quotable, quote], :action => 'edit') %></div>
   <% end %>
 </div>

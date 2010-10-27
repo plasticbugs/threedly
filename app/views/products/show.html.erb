@@ -1,4 +1,4 @@
-<%= image_tag(@product.imageurl, :class => 'itempic') %>
+<%= image_tag(@product.image.url, :class => 'itempic') %>
 <div class='info'>
   <ul>
 	<li class="title"><%= @product.title %></li>
@@ -9,8 +9,12 @@
 	</ul>
 </div>	
 	
-	<div class="quotes"><%= render :partial => "quotes/quote", :collection => @product.quotes %></div>
+	<div class="quotes"><%= render :partial => "quotes/quote", :collection => @product.quotes, :locals => {:quotable => @product} %></div>
 
-		<%= link_to "Edit this item", edit_product_path(@product) %> | 
-	<%= link_to "Add another item", new_product_path %>
-<%= link_to "Add a pull quote to this item", product_quotes_path(@product) %>
+	<% if user_signed_in? %>
+	<ul class="adminpanel">
+	<li><%= link_to "Edit this item", edit_product_path(@product) %></li>
+	<li><%= link_to "Add a pull quote to this item", product_quotes_path(@product) %></li>
+	<li><%= link_to "Add another item", new_product_path %></li>
+	</ul>
+	<% end %>

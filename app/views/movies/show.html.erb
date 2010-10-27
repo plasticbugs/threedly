@@ -1,4 +1,4 @@
-<%= image_tag(@movie.imageurl, :class => 'itempic') %>
+<%= image_tag(@movie.image.url, :class => 'itempic') %>
 
 <div class="info"><ul>
   <li class='title'><%= @movie.title %></li>
@@ -6,8 +6,12 @@
 	<li><%= @movie.rating %></li>
 	<li><%= link_to "Buy on Amazon", @movie.amazonurl %></li>
   </ul></div>
-<div class='quotes'><%= render :partial => "quotes/quote", :collection => @movie.quotes %></div>
+<div class='quotes'><%= render :partial => "quotes/quote", :collection => @movie.quotes, :locals => {:quotable => @movie} %></div>
 	
-	<%= link_to "Edit this item", edit_movie_path(@movie) %> | 
-	<%= link_to "Add another item", new_movie_path %>
-<%= link_to "Add a pull quote to this item", movie_quotes_path(@movie) %>
+	<% if user_signed_in? %>
+	<ul class="adminpanel">
+	<li><%= link_to "Edit this item", edit_movie_path(@movie) %></li>
+	<li><%= link_to "Add a pull quote to this item", movie_quotes_path(@movie) %></li>
+	<li><%= link_to "Add another item", new_movie_path %></li>
+	</ul>
+	<% end %>

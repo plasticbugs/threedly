@@ -1,6 +1,6 @@
 <h1>Products > edit</h1>
 
-<% form_for(@product) do |f| -%>
+<% form_for(@product, :html => { :multipart => true}) do |f| -%>
 
 <p><%= f.label :title %><br />
 <%= f.text_field :title %></p>
@@ -14,8 +14,9 @@
 <p>    <%= f.label 'Official Link' %><br />
 	<%= f.text_field :officialurl %></p>
 	
-<p>    <%= f.label 'Image' %><br />
-	<%= f.text_field :imageurl %></p>
+	<p><%= image_tag(@product.image.url) %><br />
+	<%= f.label 'Replace Image' %><br />
+	<%= f.file_field :image %></p>
 	
 <p>    <%= f.label 'Amazon Link' %><br />
 	<%= f.text_field :amazonurl %></p>

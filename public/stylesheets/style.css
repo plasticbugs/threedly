@@ -240,11 +240,20 @@ ul.item {
 	font-size: .8em;
 }
 
+
 .quote {
-	background: white;
+	background: #fff8d2;
 	width: 250px;
 	float: left;
-	margin: 5px;
+	font-size: 12px;
+	margin: 0 8px 8px 0;
+	border: solid;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border-width: 2px;
+	border-color: #e8e569;
+	padding: 8px;
+	color: #444;
 }
 
 .newcomment {
@@ -255,6 +264,12 @@ ul.item {
 	clear: left;
 }
 
+.adminpanel li{
+	display: inline;
+	padding: 0 10px 0px 0;
+}
+
 .quote .author {
-	font-size: 20px;
+	font-size: 16px;
+	
 }

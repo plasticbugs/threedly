@@ -3,6 +3,7 @@
 	<li class='description'><%= movie.description %></li>
 	<li><%= movie.officialurl %></li>
 	</li><%= movie.rating %></li>
+	<%= @quotable %>
 	<li><%= link_to "Buy this on Amazon", movie.amazonurl %></li>
 	<% if user_signed_in? %>
 	  <li class=""<%= link_to "Edit", edit_movie_path(movie) %></li>
