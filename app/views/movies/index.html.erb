@@ -4,8 +4,11 @@
 	<li><%= movie.officialurl %></li>
 	</li><%= movie.rating %></li>
 	<li><%= link_to "Buy this on Amazon", movie.amazonurl %></li>
-	<li><%= link_to "Edit", edit_movie_path(movie) %></li></ul>
+	<% if user_signed_in? %>
+	  <li class=""<%= link_to "Edit", edit_movie_path(movie) %></li>
+	<% end %></ul>
 <% end %>
+
 <% if user_signed_in? %>
 <%= link_to "Add another movie", new_movie_path %>
 <% end %>

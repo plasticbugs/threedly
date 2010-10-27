@@ -1,6 +1,6 @@
-<h1>Movies > edit</h1>
+<h1>Edit <%= @movie.title %></h1>
 
-<% form_for(@movie) do |f| -%>
+<% form_for(@movie, :html => { :multipart => true}) do |f| -%>
 
 <p><%= f.label :title %><br />
 <%= f.text_field :title %></p>
@@ -11,8 +11,9 @@
 <p>    <%= f.label 'Official Link' %><br />
 	<%= f.text_field :officialurl %></p>
 	
-<p>    <%= f.label 'Image' %><br />
-	<%= f.text_field :imageurl %></p>
+	<p><%= image_tag(@movie.image.url) %><br />
+	<%= f.label 'Replace Image' %><br />
+	<%= f.file_field :image %></p>
 	
 <p>    <%= f.label 'Amazon Link' %><br />
 	<%= f.text_field :amazonurl %></p>
