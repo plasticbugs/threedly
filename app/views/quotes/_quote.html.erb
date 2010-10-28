@@ -9,3 +9,4 @@
   <div class-"adminpanel"><%= link_to "Edit this quote", polymorphic_url([quotable, quote], :action => 'edit') %></div>
   <% end %>
 </div>
+<%= pull(quotable.title) %> 

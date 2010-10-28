@@ -108,6 +108,7 @@ PLATFORMS
 
 DEPENDENCIES
   devise (= 1.1.2)
+  oauth
   paperclip
   rails (= 3.0.1)
   rspec (= 2.0.0)

@@ -16,6 +16,12 @@ class QuotesController < ApplicationController
     end
   end
   
+  def pull(search)
+    Twitter::Search.new(search).each do |s|
+      s.inspect
+    end
+  end
+  
   def show
     @quote = Quote.find(params[:id])
   end
@@ -40,6 +46,12 @@ class QuotesController < ApplicationController
   end
   
 private
+
+  def oauth
+    @oauth ||= Twitter::OAuth.new(APP_CONFIG[:twitter][:consumer_key],
+                                  APP_CONFIG[:twitter][:consumer_secret])
+  end
+
   def find_quotable
     params.each do |name, value|
       if name =~ /(.+)_id$/
