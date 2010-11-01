@@ -16,12 +16,6 @@ class QuotesController < ApplicationController
     end
   end
   
-  def pull(search)
-    Twitter::Search.new(search).each do |s|
-      s.inspect
-    end
-  end
-  
   def show
     @quote = Quote.find(params[:id])
   end

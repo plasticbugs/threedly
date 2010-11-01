@@ -1,17 +1,28 @@
-<%= image_tag(@game.image.url, :class => 'itempic') %>
-<div class="info">
-  <ul>
+<div id="main">
+  <ul class ="info">
+  <li><%= image_tag(@game.image.url, :class => 'itempic') %></li>  
 	<li class='title'><%= @game.title %></li>
 	<li class='description'><%= @game.description %></li>
 	<li><%= @game.rating %></li>
 	<li><%= link_to "Buy on Amazon", @game.amazonurl %></li>
 	</ul>
-</div>
 
-<div class='quotes'><%= render :partial => "quotes/quote", :collection => @game.quotes, :locals => {:quotable => @game} %></div>
+<div class='quotes'><%= render :partial => "quotes/quote", :collection => @game.quotes, :locals => {:quotable => @game} %></div></div>
 
+<div id="sidebar"><div class ='twitter'>	
+  <h1>Recent Tweets about <%= @game.title %></h1>
+	<% @search.each do |tweet| %>
+  	<ul class='tweet'>
+      <% tweetpic = tweet.profile_image_url %>
+      <li><%= image_tag(tweetpic, :width => '48', :height => '48', :class => 'tweetpic') %></li>
+      <li class="tweetfrom"><%= tweet.from_user %></li>
+      <li class="tweettext"><%= auto_link(tweet.text) %></li>
+    </ul>
+	<% end %>
+</div></div>
 <% if user_signed_in? %><ul class="adminpanel">	<li><%= link_to "Edit this item", edit_game_path(@game) %></li> 
 	<li><%= link_to "Add a pull quote to this item", game_quotes_path(@game) %></li>
  
 	<li><%= link_to "Add another item", new_game_path %></li>
 </ul><% end %>
+

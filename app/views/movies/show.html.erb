@@ -8,6 +8,18 @@
   </ul></div>
 <div class='quotes'><%= render :partial => "quotes/quote", :collection => @movie.quotes, :locals => {:quotable => @movie} %></div>
 	
+<div style="clear: left; width: 400px;">	
+	<% @search.each do |tweet| %>
+	<p>
+	<% userpic = tweet.profile_image_url %>
+	<%= tweet.from_user %>
+	<%= image_tag(userpic, :width => '48', :height => '48') %>
+	<%= tweet.text %>
+	<div style="background-color: black; color: white;">
+	<%= tweet.inspect %></div>
+	</p>
+	<% end %>
+</div>	
 	<% if user_signed_in? %>
 	<ul class="adminpanel">
 	<li><%= link_to "Edit this item", edit_movie_path(@movie) %></li>

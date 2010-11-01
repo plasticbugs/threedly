@@ -65,7 +65,7 @@ body {
 	background-image: url('/images/container_bg.png');
 	background-repeat: repeat-y;
 	color: #444;
-	font-size: 14px;
+	font-size: 12px;
 	}
 
 #header {
@@ -86,6 +86,7 @@ body {
 
 img .poster {
 	max-width: 50px;
+	padding-right: 10px;
 }
 
 ul.item {
@@ -131,21 +132,33 @@ a:active {
 	letter-spacing: 1px;
 }
 
-div .info {
+#main {
+	float: left;
+	width: 500px;
+}
+
+#sidebar {
+	float: right;
+	width: 300px;
+}
+
+ul .info {
 float: left;
-margin: 0 0 0 10px;
 width: 450px;
 }
 
 div .quotes {
 	padding: 10px 0 0 0;
+	float: left;
 	clear: left;
+	width: 230px;
 }
 
 .itempic {
 	float: left;
 	border-style: solid;
 	border-width: 3px;
+	margin-right: 10px;
 }
 
 #navbar ul a:link {
@@ -240,20 +253,27 @@ ul.item {
 	font-size: .8em;
 }
 
+div .twitter {
+	padding: 10px 0 0 0;
+	float: right;
+}
 
-.quote {
-	background: #fff8d2;
+.tweet {
+	background: #fff;
 	width: 250px;
-	float: left;
+	height: 70px;
+	float: right;
+	clear: right;
 	font-size: 12px;
-	margin: 0 8px 8px 0;
-	border: solid;
+	margin: 0 8px 4px 0;
+	/*border: solid;
 	-moz-border-radius: 10px;
-	border-radius: 10px;
+	border-radius: 5px;
 	border-width: 2px;
-	border-color: #e8e569;
+	border-color: #90d5ec;*/
 	padding: 8px;
 	color: #444;
+	overflow: hidden;
 }
 
 .newcomment {
@@ -262,7 +282,7 @@ ul.item {
 
 .adminpanel {
 	clear: left;
-}
+	}
 
 .adminpanel li{
 	display: inline;
@@ -271,5 +291,25 @@ ul.item {
 
 .quote .author {
 	font-size: 16px;
-	
+}
+
+img.tweetpic {
+	border: solid;
+	border-width: 2px;
+	border-radius: 2px;
+	border-color: #247;
+}
+
+.tweetfrom {
+	font-size: 14px;
+	float: left;
+	margin-left: 62px;
+	margin-top: -55px;
+	color: #26a0d5;
+}
+
+.tweettext {
+	float: left;
+	margin-left: 62px;
+	margin-top: -40px;
 }

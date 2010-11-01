@@ -8,6 +8,7 @@ class MoviesController < ApplicationController
   def show
     @movie = Movie.find(params[:id])
     @quotes = @movie.quotes.find(:all)
+    @search = Twitter::Search.new.containing(@movie.title).lang('en').rpp(10)
   end
 
   def new

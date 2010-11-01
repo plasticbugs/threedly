@@ -8,6 +8,7 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @quotes = @game.quotes.find(:all)
+    @search = Twitter::Search.new.containing(@game.title).lang('en').rpp(10)    
   end
 
   def new
