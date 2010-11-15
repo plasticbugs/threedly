@@ -1,10 +1,16 @@
+<%= flash[:error] %>
 <% @games.each do |game| %>
 <ul class="item"><li class="title"><%= link_to game.title, game %></li>
 	<li class="description"><%= game.description %></li>
 	<li class="officiallink"><%= game.officialurl %></li>
 	<li class="rating"><%= game.rating %></li>
-	<li class="amazon"><%= link_to "Buy this on Amazon", game.amazonurl %></li>
-	<% if user_signed_in? %><li class=""<%= link_to "Edit", edit_game_path(game) %></li><% end %></ul>
+  
+	<% if user_signed_in? %>
+	<li class=""<%= link_to "Edit", edit_game_path(game) %></li>
+		<li><%= link_to "Delete", game_path(game), :confirm => "Are you sure?", :method => :delete %></li>
+	<% end %>
+</ul>
+
 <% end %>
 <% if user_signed_in? %>
 <%= link_to "Add another game", new_game_path %>

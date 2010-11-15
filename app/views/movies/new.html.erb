@@ -1,6 +1,6 @@
 <h1>Movies > New</h1>
 
-<% form_for(@movie) do |f| -%>
+<% form_for(@movie, :html => {:multipart => true} ) do |f| -%>
 
 <p><%= f.label :title %><br />
 <%= f.text_field :title %></p>

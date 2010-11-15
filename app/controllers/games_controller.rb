@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
-  
+
   def index
     @games = Game.all
   end
@@ -25,6 +25,13 @@ class GamesController < ApplicationController
       render :action => "new"
     end
     
+  end
+  
+  def destroy
+    @game = Game.find(params[:id])
+    @game.destroy
+    flash[:notice] = "Game was successfully deleted."
+    redirect_to :action => "index"
   end
   
   def update

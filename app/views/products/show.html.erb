@@ -1,13 +1,24 @@
-<%= image_tag(@product.image.url, :class => 'itempic') %>
-<div class='info'>
-  <ul>
-	<li class="title"><%= @product.title %></li>
-	<li class="modelno"><%= @product.modelnumber %></li>
-	<li class="rating"><%= @product.rating %></li>
-	<li class="description"><%= @product.description %></li>
-	<li><%= link_to "Buy on Amazon", @product.amazonurl %></li>
-	</ul>
-</div>	
+<div id="main">
+  <ul class ="info">
+    <li>
+      <%= image_tag(@product.image_url, :class => 'itempic') %>       
+    </li>  
+	  <li class='title'>
+	    <%= @product.title %>
+	  </li>
+
+  <li class='description'>
+    <% if @product.description.blank? %>
+    <%= @product.aws_description  %><%= link_to "...", "google.com", :title => 'Read more' %>
+    <% else %>
+    <%= @product.description %>
+    <% end %>
+  </li>
+  <li class="amazon"><%= link_to 'Buy this on Amazon', @product.amazon_url %></li>
+  
+  </ul>
+  </div>
+
 	
 	<div class="quotes"><%= render :partial => "quotes/quote", :collection => @product.quotes, :locals => {:quotable => @product} %></div>
 

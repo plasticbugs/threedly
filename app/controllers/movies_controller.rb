@@ -38,6 +38,12 @@ class MoviesController < ApplicationController
     end
   end
   
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+    flash[:notice] = "Movie was successfully deleted."
+    redirect_to :action => "index"
+  end
 
 
   def edit

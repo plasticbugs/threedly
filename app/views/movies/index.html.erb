@@ -1,13 +1,15 @@
+<%= flash[:error] %>
 <% @movies.each do |movie| %>
 <ul class="item"><li class='title'><%= link_to movie.title, movie %></li>
-	<li class='description'><%= movie.description %></li>
+
 	<li><%= movie.officialurl %></li>
 	</li><%= movie.rating %></li>
 	<%= @quotable %>
-	<li><%= link_to "Buy this on Amazon", movie.amazonurl %></li>
 	<% if user_signed_in? %>
-	  <li class=""<%= link_to "Edit", edit_movie_path(movie) %></li>
-	<% end %></ul>
+	  <li class=""><%= link_to "Edit", edit_movie_path(movie) %></li>
+	  <li><%= link_to "Delete", movie_path(movie), :confirm => "Are you sure?", :method => :delete %></li>
+	<% end %>
+	</ul>
 <% end %>
 
 <% if user_signed_in? %>

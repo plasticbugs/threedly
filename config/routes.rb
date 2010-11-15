@@ -3,7 +3,7 @@ Reviews::Application.routes.draw do
   devise_for :users
 
   resources :games
-
+  
   resources :games do
     resources :quotes
   end
