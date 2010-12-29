@@ -7,21 +7,26 @@
 	    <%= @game.title %>
 	  </li>
 
-  <li class='description'>
-    <% if @game.description.blank? %>
-    <%=  @game.aws_description %><%= link_to "...", "google.com", :title => 'Read more' %>
-    <% else %>
-    <%=  @game.description %>
-    <% end %>
-  </li>
+    <li class='description'>
+      <% if @game.description.blank? %>
+        <%=  @game.aws_description %><%= link_to "...", "google.com", :title => 'Read more' %>
+      <% else %>
+        <%=  @game.description %>
+      <% end %>
+    </li>
   
-	<li><%= @game.rating %></li>
-	<li class="amazon"><%= link_to "Buy this on Amazon", @game.amazon_url %></li>
-</ul>
+	  <li><%= @game.rating %></li>
+	  <li class="amazon"><%= link_to "Buy this on Amazon", @game.amazon_url %></li>
+  </ul>
 
-<div class='quotes'><%= render :partial => "quotes/quote", :collection => @game.quotes, :locals => {:quotable => @game} %></div></div>
+    <div class='quotes'>
+    <%= render :partial => "quotes/quote", :collection => @game.quotes, :locals => {:quotable => @game} %>
+  </div>
 
-<div id="sidebar"><div class ='twitter'>	
+</div>
+
+<div id="sidebar">
+  <div class ='twitter'>	
   <h1>Recent Tweets about <%= @game.title %></h1>
 	<% @search.each do |tweet| %>
   	<ul class='tweet'>
@@ -31,7 +36,7 @@
       <li class="tweettext"><%= auto_link(tweet.text) %></li>
     </ul>
 	<% end %>
-</div>
+  </div>
 </div>
 
 <% if user_signed_in? %><ul class="adminpanel">	<li><%= link_to "Edit this item", edit_game_path(@game) %></li> 

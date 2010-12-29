@@ -16,7 +16,10 @@ Reviews::Application.routes.draw do
     resources :quotes
   end
   
+  match "/admin", :to => redirect("/users/sign_in")
+  
   root :to => "games#index"
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

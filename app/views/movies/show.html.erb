@@ -17,22 +17,25 @@
   <li><%= link_to 'Buy this on Amazon', @movie.amazon_url %></li>
 	
   </ul>
-  </div>
-  
+
 <div class='quotes'><%= render :partial => "quotes/quote", :collection => @movie.quotes, :locals => {:quotable => @movie} %></div>
-	
-<div style="clear: left; width: 400px;">	
+</div>
+  
+
+
+<div id="sidebar">
+<div class="twitter">
+	<h1>Recent Tweets about <%= @movie.title %></h1>	
 	<% @search.each do |tweet| %>
-	<p>
 	<% userpic = tweet.profile_image_url %>
-	<%= tweet.from_user %>
-	<%= image_tag(userpic, :width => '48', :height => '48') %>
-	<%= tweet.text %>
-	<div style="background-color: black; color: white;">
-	<%= tweet.inspect %></div>
-	</p>
+	<ul class="tweet">
+	<li><%= image_tag(userpic, :width => '48', :height => '48') %></li>
+	<li class="tweetfrom"><%= tweet.from_user %></li>
+	<li class="tweettext"><%= tweet.text %></li>
+	</ul>
 	<% end %>
-</div>	
+</div>
+</div>
 	<% if user_signed_in? %>
 	<ul class="adminpanel">
 	<li><%= link_to "Edit this item", edit_movie_path(@movie) %></li>

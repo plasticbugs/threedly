@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @quotes = @product.quotes.find(:all)
-    @search = Twitter::Search.new.containing(@product.modelnumber).lang('en').rpp(10)
+    @search = Twitter::Search.new.containing(@product.title).lang('en').rpp(10)
   end
 
   def new

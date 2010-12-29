@@ -53,17 +53,18 @@ table {
   border-spacing: 0;
 }
 
+
+
+
 body {
-  background-color: #444;
+  background-color: #888;
   background-repeat: repeat-x;
 }
 
 #container {
   width: 960px;
   margin: 0px auto;
-  background-color: #d0e5e8;
-  background-image: url('/images/container_bg.png');
-  background-repeat: repeat-y;
+  background-color: #f8f8f8;
   color: #444;
   font-size: 12px;
 }
@@ -86,11 +87,7 @@ body {
 
 img .poster {
   max-width: 50px;
-  padding-right: 10px;
-}
-
-ul.item {
-  margin: 0 0 15px 0;
+  padding-right: 15px;
 }
 
 
@@ -142,8 +139,11 @@ a:active {
   width: 300px;
 }
 
+#footer {
+  clear: both;
+}
+
 ul.info {
-  float: left;
   width: 450px;
 }
 
@@ -158,7 +158,7 @@ div .quotes {
   float: left;
   border-style: solid;
   border-width: 3px;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 #navbar ul a:link {
@@ -198,10 +198,16 @@ div .quotes {
   font-style: normal;
 }
 
+ul.item:hover {
+  background-color: #fff;
+}
+
 li.title {
-  font: 25px/25px 'ChunkFiveRegular', Palatino, "Times New Roman", serif;
-  letter-spacing: 0px;
+  font: 18px/18px Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: -1px;
   text-shadow: #fff 0px 1px;
+  margin-bottom: 3px;
 }
 
 li.title a:link {
@@ -228,7 +234,7 @@ table a:link {
   text-decoration: none;
   color: #444;
 }
-
+/*
 table a:visited {
   text-decoration: none;
   color: #444;
@@ -243,6 +249,7 @@ table a:active {
   text-decoration: none;
   color: #444;
 }
+*/
 
 #login {
   float: right;
@@ -251,8 +258,7 @@ table a:active {
   margin: 10px 15px 0 0;
 }
 
-#container img{
-}
+
 /*
 li.description table {
   width: 0px;
@@ -294,13 +300,21 @@ li.description td {
   width: 500px;
 }
 
+li.edit {
+  display: inline;
+}
+
+li.delete {
+  display: inline;
+}
+
 ul.item {
   font-size: .8em;
+  margin: 0 0 10px 0;
 }
 
 div .twitter {
   padding: 10px 0 0 0;
-  float: right;
 }
 
 .tweet {
@@ -311,11 +325,11 @@ div .twitter {
   clear: right;
   font-size: 12px;
   margin: 0 8px 4px 0;
-  /*border: solid;
+  border: solid;
   -moz-border-radius: 10px;
   border-radius: 5px;
   border-width: 2px;
-  border-color: #90d5ec;*/
+  border-color: #90d5ec;
   padding: 8px;
   color: #444;
   overflow: hidden;

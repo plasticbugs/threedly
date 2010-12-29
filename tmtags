@@ -20,7 +20,7 @@ DeviseCreateUsers	/Users/scottmos/work/reviews/db/migrate/20101022082640_devise_
 Game	/Users/scottmos/work/reviews/app/models/game.rb	/^class Game < ActiveRecord::Base$/;"	class	line:1
 GamesController	/Users/scottmos/work/reviews/app/controllers/games_controller.rb	/^class GamesController < ApplicationController$/;"	class	line:1
 GamesHelper	/Users/scottmos/work/reviews/app/helpers/games_helper.rb	/^module GamesHelper$/;"	mixin	line:1
-Movie	/Users/scottmos/work/reviews/app/models/movie.rb	/^class Movie < ActiveRecord::Base$/;"	class	line:1
+Movie	/Users/scottmos/work/reviews/app/models/movie.rb	/^class Movie < ActiveRecord::Base$/;"	class	line:4
 MoviesController	/Users/scottmos/work/reviews/app/controllers/movies_controller.rb	/^class MoviesController < ApplicationController$/;"	class	line:1
 MoviesHelper	/Users/scottmos/work/reviews/app/helpers/movies_helper.rb	/^module MoviesHelper$/;"	mixin	line:1
 Product	/Users/scottmos/work/reviews/app/models/product.rb	/^class Product < ActiveRecord::Base$/;"	class	line:1
@@ -44,9 +44,17 @@ absolutize	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  func
 addMethods	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function addMethods(source) {$/;"	function	line:124
 addText	/Users/scottmos/work/reviews/public/javascripts/controls.js	/^    function addText(mode, condition) {$/;"	function	line:563
 all	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function all(iterator, context) {$/;"	function	line:834
+amazon_url	/Users/scottmos/work/reviews/app/models/game.rb	/^  def amazon_url$/;"	method	line:16
+amazon_url	/Users/scottmos/work/reviews/app/models/movie.rb	/^  def amazon_url$/;"	method	line:16
+amazon_url	/Users/scottmos/work/reviews/app/models/product.rb	/^  def amazon_url$/;"	method	line:16
 any	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function any(iterator, context) {$/;"	function	line:844
 argumentNames	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function argumentNames() {$/;"	function	line:372
-aws_data	/Users/scottmos/work/reviews/app/models/movie.rb	/^  def aws_data$/;"	method	line:5
+aws_data	/Users/scottmos/work/reviews/app/models/game.rb	/^  def aws_data$/;"	method	line:20
+aws_data	/Users/scottmos/work/reviews/app/models/movie.rb	/^  def aws_data$/;"	method	line:20
+aws_data	/Users/scottmos/work/reviews/app/models/product.rb	/^  def aws_data$/;"	method	line:20
+aws_description	/Users/scottmos/work/reviews/app/models/game.rb	/^  def aws_description$/;"	method	line:8
+aws_description	/Users/scottmos/work/reviews/app/models/movie.rb	/^  def aws_description$/;"	method	line:8
+aws_description	/Users/scottmos/work/reviews/app/models/product.rb	/^  def aws_description$/;"	method	line:8
 bind	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function bind(context) {$/;"	function	line:379
 bindAsEventListener	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function bindAsEventListener(context) {$/;"	function	line:388
 blank	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function blank() {$/;"	function	line:733
@@ -76,6 +84,9 @@ dasherize	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  funct
 defer	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function defer() {$/;"	function	line:413
 define	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function define(D) {$/;"	function	line:3189
 delay	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function delay(timeout) {$/;"	function	line:405
+destroy	/Users/scottmos/work/reviews/app/controllers/games_controller.rb	/^  def destroy$/;"	method	line:30
+destroy	/Users/scottmos/work/reviews/app/controllers/movies_controller.rb	/^  def destroy$/;"	method	line:41
+destroy	/Users/scottmos/work/reviews/app/controllers/products_controller.rb	/^  def destroy$/;"	method	line:41
 detect	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function detect(iterator, context) {$/;"	function	line:863
 dirCheck	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^function dirCheck( dir, cur, doneName, checkSet, nodeCheck, isXML ) {$/;"	function	line:4859
 dirNodeCheck	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^function dirNodeCheck( dir, cur, doneName, checkSet, nodeCheck, isXML ) {$/;"	function	line:4823
@@ -91,9 +102,9 @@ down	/Users/scottmos/work/reviews/db/migrate/20101027043245_add_image_column_to_
 each	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function each(iterator) {$/;"	function	line:1082
 each	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function each(iterator, context) {$/;"	function	line:814
 eachSlice	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function eachSlice(number, iterator, context) {$/;"	function	line:826
-edit	/Users/scottmos/work/reviews/app/controllers/games_controller.rb	/^  def edit$/;"	method	line:43
-edit	/Users/scottmos/work/reviews/app/controllers/movies_controller.rb	/^  def edit$/;"	method	line:43
-edit	/Users/scottmos/work/reviews/app/controllers/products_controller.rb	/^  def edit$/;"	method	line:43
+edit	/Users/scottmos/work/reviews/app/controllers/games_controller.rb	/^  def edit$/;"	method	line:50
+edit	/Users/scottmos/work/reviews/app/controllers/movies_controller.rb	/^  def edit$/;"	method	line:49
+edit	/Users/scottmos/work/reviews/app/controllers/products_controller.rb	/^  def edit$/;"	method	line:50
 edit	/Users/scottmos/work/reviews/app/controllers/quotes_controller.rb	/^  def edit$/;"	method	line:27
 element	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function element(event) {$/;"	function	line:5353
 empty	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function empty() {$/;"	function	line:729
@@ -127,6 +138,9 @@ grep	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function g
 gsub	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function gsub(pattern, replacement) {$/;"	function	line:538
 handleMethod	/Users/scottmos/work/reviews/public/javascripts/rails.js	/^  function handleMethod(element) {$/;"	function	line:103
 handleRemote	/Users/scottmos/work/reviews/public/javascripts/rails.js	/^  function handleRemote(element) {$/;"	function	line:74
+image_url	/Users/scottmos/work/reviews/app/models/game.rb	/^  def image_url$/;"	method	line:12
+image_url	/Users/scottmos/work/reviews/app/models/movie.rb	/^  def image_url$/;"	method	line:12
+image_url	/Users/scottmos/work/reviews/app/models/product.rb	/^  def image_url$/;"	method	line:12
 inGroupsOf	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function inGroupsOf(number, fillWith) {$/;"	function	line:911
 include	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function include(object) {$/;"	function	line:897
 include	/Users/scottmos/work/reviews/public/javascripts/prototype.js	/^  function include(pattern) {$/;"	function	line:716
@@ -256,7 +270,7 @@ up	/Users/scottmos/work/reviews/db/migrate/20101022082640_devise_create_users.rb
 up	/Users/scottmos/work/reviews/db/migrate/20101025033703_add_image_columns_to_game.rb	/^  def self.up$/;"	singleton method	line:2
 up	/Users/scottmos/work/reviews/db/migrate/20101027043133_add_image_column_to_movies.rb	/^    def self.up$/;"	singleton method	line:2
 up	/Users/scottmos/work/reviews/db/migrate/20101027043245_add_image_column_to_products.rb	/^    def self.up$/;"	singleton method	line:2
-update	/Users/scottmos/work/reviews/app/controllers/games_controller.rb	/^  def update$/;"	method	line:30
+update	/Users/scottmos/work/reviews/app/controllers/games_controller.rb	/^  def update$/;"	method	line:37
 update	/Users/scottmos/work/reviews/app/controllers/movies_controller.rb	/^  def update$/;"	method	line:30
 update	/Users/scottmos/work/reviews/app/controllers/products_controller.rb	/^  def update$/;"	method	line:30
 update	/Users/scottmos/work/reviews/app/controllers/quotes_controller.rb	/^  def update$/;"	method	line:31

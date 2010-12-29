@@ -17,23 +17,25 @@
   <li class="amazon"><%= link_to 'Buy this on Amazon', @product.amazon_url %></li>
   
   </ul>
-  </div>
 
-	
-	<div class="quotes"><%= render :partial => "quotes/quote", :collection => @product.quotes, :locals => {:quotable => @product} %></div>
+<div class='quotes'><%= render :partial => "quotes/quote", :collection => @product.quotes, :locals => {:quotable => @product} %></div>
+</div>
+  
 
-  <div style="clear: left; width: 400px;">	
-  	<% @search.each do |tweet| %>
-  	<p>
-  	<% userpic = tweet.profile_image_url %>
-  	<%= tweet.from_user %>
-  	<%= image_tag(userpic, :width => '48', :height => '48') %>
-  	<%= tweet.text %>
-  	<div style="background-color: black; color: white;">
-  	<%= tweet.inspect %></div>
-  	</p>
-  	<% end %>
-  </div>
+
+<div id="sidebar">
+<div class="twitter">
+	<h1>Recent Tweets about <%= @product.title %></h1>	
+	<% @search.each do |tweet| %>
+	<% userpic = tweet.profile_image_url %>
+	<ul class="tweet">
+	<li><%= image_tag(userpic, :width => '48', :height => '48') %></li>
+	<li class="tweetfrom"><%= tweet.from_user %></li>
+	<li class="tweettext"><%= tweet.text %></li>
+	</ul>
+	<% end %>
+</div>
+</div>
 
 	<% if user_signed_in? %>
 	<ul class="adminpanel">

@@ -6,8 +6,8 @@
 	<li class="rating"><%= game.rating %></li>
   
 	<% if user_signed_in? %>
-	<li class=""<%= link_to "Edit", edit_game_path(game) %></li>
-		<li><%= link_to "Delete", game_path(game), :confirm => "Are you sure?", :method => :delete %></li>
+	<li class="edit"<%= link_to "Edit", edit_game_path(game) %></li> |
+		<li class="delete"><%= link_to "Delete", game_path(game), :confirm => "Are you sure?", :method => :delete %></li>
 	<% end %>
 </ul>
 
